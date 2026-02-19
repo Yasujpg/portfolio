@@ -44,7 +44,7 @@ function App() {
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       <section className="hero">
-        <h1 className="title">Yasu</h1>
+        <h1 className="title">Yasmine Benhammou</h1>
         <div className="line"></div>
         <p className="subtitle">
           Front-End Developer crafting modern and elegant web experiences
@@ -156,11 +156,10 @@ function App() {
       </section>
 
       {showScroll && (
-  <button className="scroll-top" onClick={scrollToTop}>
-    <span className="scroll-icon">↑</span>
-  </button>
-)}
-
+        <button className="scroll-top" onClick={scrollToTop}>
+          <span className="scroll-icon">↑</span>
+        </button>
+      )}
 
     </>
   )

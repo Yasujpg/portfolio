@@ -1,41 +1,59 @@
+import { useState } from "react"
+
 function Navbar({ darkMode, setDarkMode }) {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <nav className="navbar">
 
-      <div className="logo-button">
+      <a href="#contact" className="logo-button">
         <div className="logo-text">
-          {" YASMINE   ·  BENHAMMOU  · " .split("").map((char, index) => (
-            <span key={index} style={{ "--index": index }}>
-              {char}
-            </span>
-          ))}
+          {"  YASMINE   ·  BENHAMMOU  ·"
+            .split("")
+            .map((char, index) => (
+              <span key={index} style={{ "--index": index }}>
+                {char}
+              </span>
+            ))}
         </div>
         <div className="logo-circle">YB</div>
-      </div>
+      </a>
 
-      <ul className="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
+        <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
+        <li><a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a></li>
+        <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
       </ul>
 
-      <label className="switch">
-  <input
-    type="checkbox"
-    checked={darkMode}
-    onChange={() => setDarkMode(prev => !prev)}
-  />
-  <span className="slider">
-    <span className="sun-moon"></span>
-    <span className="stars">
-      <span className="star star-1"></span>
-      <span className="star star-2"></span>
-      <span className="star star-3"></span>
-    </span>
-  </span>
-</label>
+      <div className="nav-right">
 
+        <label className="switch">
+          <input
+            type="checkbox"
+            checked={darkMode}
+            onChange={() => setDarkMode(prev => !prev)}
+          />
+          <span className="slider">
+            <span className="sun-moon"></span>
+            <span className="stars">
+              <span className="star star-1"></span>
+              <span className="star star-2"></span>
+              <span className="star star-3"></span>
+            </span>
+          </span>
+        </label>
+
+        <div 
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(prev => !prev)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      </div>
 
     </nav>
   )

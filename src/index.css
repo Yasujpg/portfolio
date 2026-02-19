@@ -154,7 +154,7 @@ h1, h2, h3 {
   text-transform: uppercase;
   font-weight: 500;
 
-  cursor: pointer;
+  cursor: default;
   transition: all 0.35s ease;
 }
 
@@ -359,6 +359,90 @@ h1, h2, h3 {
   background: #800020;
   color: #ffffff;
   transform: scale(1.08);
+}
+
+@media (max-width: 1024px) {
+
+  .carousel {
+    width: 100%;
+    height: 480px;
+  }
+
+  .card {
+    width: 320px;
+    height: 480px;
+    padding: 50px 30px;
+  }
+
+  .arrow.left { left: -70px; }
+  .arrow.right { right: -70px; }
+
+}
+
+@media (max-width: 768px) {
+
+  .skills-section {
+    padding: 100px 20px;
+  }
+
+  .carousel-wrapper {
+    max-width: 100%;
+  }
+
+  .carousel {
+    width: 100%;
+    height: 450px;
+  }
+
+  .card {
+    width: 90%;
+    height: 440px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+  }
+
+  .card.active {
+    transform: translateX(-50%) scale(1);
+  }
+
+  .card.prev,
+  .card.next {
+    display: none;
+  }
+
+  .arrow {
+    width: 45px;
+    height: 45px;
+  }
+
+  .arrow.left { left: 10px; }
+  .arrow.right { right: 10px; }
+
+}
+
+@media (max-width: 480px) {
+
+  .skills-title {
+    font-size: 2rem;
+  }
+
+  .skills-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .card {
+    height: 420px;
+    padding: 40px 25px;
+  }
+
+  .card h3 {
+    font-size: 1.4rem;
+  }
+
+  .card ul {
+    font-size: 0.9rem;
+  }
+
 }
 
 .projects {
@@ -636,6 +720,92 @@ h1, h2, h3 {
 
 .job-inner li {
   color: #333333;
+}
+
+@media (max-width: 1024px) {
+
+  .jobs-wrapper {
+    gap: 50px;
+  }
+
+  .job-card {
+    width: 420px;
+    height: auto;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .experience {
+    padding: 120px 20px;
+  }
+
+  .jobs-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .job-card {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
+
+  .job-inner {
+    padding: 45px 35px;
+  }
+
+  .job-inner h3 {
+    font-size: 1.5rem;
+  }
+
+  .job-inner p {
+    font-size: 0.95rem;
+  }
+
+  .job-inner li {
+    font-size: 0.9rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .job-inner {
+    padding: 35px 25px;
+  }
+
+  .job-inner h3 {
+    font-size: 1.3rem;
+  }
+
+  .job-inner p {
+    font-size: 0.85rem;
+  }
+
+  .job-inner li {
+    font-size: 0.85rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .job-inner::before,
+  .job-inner::after {
+    transform: translate(0, 0);
+  }
+
+  .job-card:hover .job-inner::before {
+    transform: rotate(-4deg);
+  }
+
+  .job-card:hover .job-inner::after {
+    transform: rotate(4deg);
+  }
+
 }
 
 .contact {
@@ -1278,4 +1448,87 @@ html {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0px); }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #f5efe6;
+  transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px);
+}
+
+@media (max-width: 900px) {
+
+  .navbar {
+    padding: 14px 25px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 110px;
+    right: 30px;
+
+    background: rgba(20,20,20,0.95);
+    backdrop-filter: blur(12px);
+
+    flex-direction: column;
+    gap: 25px;
+
+    padding: 30px 40px;
+    border-radius: 25px;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+}
+
+.logo-button {
+  text-decoration: none;
+}
+
+.logo-button:focus,
+.logo-button:active {
+  outline: none;
+  text-decoration: none;
 }
