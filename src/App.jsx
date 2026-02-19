@@ -130,7 +130,7 @@ function App() {
             <div className="contact-social">
 
               <a
-                href="https://linkedin.com/in/yasmine-benhammou"
+                href="https://www.linkedin.com/in/yasmine-benhammou-achabou-646406190/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-btn linkedin"
