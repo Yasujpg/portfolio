@@ -20,11 +20,14 @@ function Navbar({ darkMode, setDarkMode }) {
       </a>
 
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
-        <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
-        <li><a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a></li>
-        <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
-      </ul>
+  <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
+  <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
+  <li><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
+  <li><a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a></li>
+  <li><a href="#education" onClick={() => setMenuOpen(false)}>Education</a></li>
+  <li><a href="#languages" onClick={() => setMenuOpen(false)}>Languages</a></li>
+  <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
+</ul>
 
       <div className="nav-right">
 
